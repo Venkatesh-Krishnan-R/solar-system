@@ -85,12 +85,3 @@ jobs:
             badge: true
             format: 'markdown'
             output: 'both'
-            
-        - name: Add Code Coverage Summary to Job Summary
-          uses: actions/github-script@v6
-          with:
-            script: |
-              const fs = require('fs');
-              const coverageSummary = fs.readFileSync('coverage-summary.md', 'utf8');
-              github.summary.addRaw(coverageSummary);
-              await github.summary.write();
