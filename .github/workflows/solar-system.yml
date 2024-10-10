@@ -77,13 +77,9 @@ jobs:
             name: Code-Coverage-Result
             path: coverage
             retention-days: 5
-            
-        - name: Code Coverage Summary Report
-          uses: irongut/CodeCoverageSummary@v1.3.0
-          continue-on-error: true
+
+        - name: Produce the coverage report
+          uses: insightsengineering/coverage-action@v2
           with:
-            filename: coverage/cobertura-coverage.xml
-            indicators: true
-            output: both
-            badge: true
-            format: markdown
+            # Path to the Cobertura XML report.
+            path: coverage/cobertura-coverage.xml
