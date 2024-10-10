@@ -25,7 +25,14 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: 20
-    
+            
+        - name: Cache NPM Dependencies
+          uses: actions/cache@v3
+          with:
+           # npm cache files are stored in `~/.npm` on Linux/macOS
+            path: node_modules
+            key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json')
+            
         - name: Install Dependencies
           run: npm install
     
@@ -59,11 +66,18 @@ jobs:
         - name: Checkout Repository
           uses: actions/checkout@v4
 
-        - name: Setup NodeJS Version - 18
+        - name: Setup NodeJS Version - 20
           uses: actions/setup-node@v3
           with:
-            node-version: 18
-
+            node-version: 20
+            
+        - name: Cache NPM Dependencies
+          uses: actions/cache@v3
+          with:
+           # npm cache files are stored in `~/.npm` on Linux/macOS
+            path: node_modules
+            key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json')
+            
         - name: Install Dependencies
           run: npm install
 
