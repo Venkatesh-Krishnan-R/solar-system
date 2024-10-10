@@ -41,4 +41,4 @@ jobs:
           with:
             name: Mocha Tests            # Name of the check run which will be created
             path: test-results/test-results.xml    # Path to test results
-            reporter: mocha-junit    
+            reporter: junit
