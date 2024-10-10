@@ -6,6 +6,10 @@ on:
     branches:
       - main
       - 'feature'
+  pull_request:
+    branches:
+      - main
+      - 'feature'
 permissions:
   checks: write
 env:
