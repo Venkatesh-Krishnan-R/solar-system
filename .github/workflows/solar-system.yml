@@ -51,3 +51,4 @@ jobs:
             include_passed: true
             job_summary: true
             detailed_summary: true
+            flaky_summary: true
