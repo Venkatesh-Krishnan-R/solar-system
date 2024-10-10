@@ -86,3 +86,4 @@ jobs:
             indicators: true
             output: both
             badge: true
+            format: markdown
