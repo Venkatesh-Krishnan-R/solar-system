@@ -83,3 +83,6 @@ jobs:
           continue-on-error: true
           with:
             filename: coverage/cobertura-coverage.xml
+            indicators: true
+            output: both
+            badge: true
