@@ -88,9 +88,8 @@ jobs:
         - name: Check Code Coverage
           run: |
             npm run coverage > coverage_output.txt || true
-            cat coverage_output.txt
             echo "### Code Coverage Results" >> $GITHUB_STEP_SUMMARY
-            cat coverage_output.txt >> $GITHUB_STEP_SUMMARY
+            awk '/----------/{flag=1;next}/----------/{flag=0}flag' coverage_output.txt >> $GITHUB_STEP_SUMMARY
           continue-on-error: true
 
         - name: Archive Test Result
