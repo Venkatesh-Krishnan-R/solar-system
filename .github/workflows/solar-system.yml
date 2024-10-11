@@ -112,6 +112,12 @@ jobs:
             with:
               username: ${{ vars.DOCKERHUB_USERNAME }}
               password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          - name: Login to GHCR
+            uses: docker/login-action@v3
+            with:
+              registry: ghcr.io
+              username: ${{ github.repository_owner }}
+              password: ${{ secrets.GITHUB_TOKEN }}
               
           - name: Build Docker image for testing
             uses: docker/build-push-action@v4
@@ -136,9 +142,11 @@ jobs:
              echo Test the image URL using wget
              wget -q -O- 127.0.0.1:3000/live | grep live
              
-          - name: Push Docker image
+          - name: Container Registry Push
             uses: docker/build-push-action@v4
             with:
               context: .
               push: true
-              tags: ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
+              tags: |
+                ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
+                ghcr.io/${{ vars.GHCR_USERNAME }}/solar-system:${{ github.sha }}
