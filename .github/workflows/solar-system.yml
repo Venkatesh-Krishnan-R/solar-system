@@ -86,7 +86,11 @@ jobs:
           run: npm install
 
         - name: Check Code Coverage
-          run: npm run coverage
+          run: |
+            npm run coverage > coverage_output.txt
+            cat coverage_output.txt
+            echo "### Code Coverage Results" >> $GITHUB_STEP_SUMMARY
+            cat coverage_output.txt >> $GITHUB_STEP_SUMMARY
           continue-on-error: true
 
         - name: Archive Test Result
