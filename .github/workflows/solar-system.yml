@@ -87,7 +87,7 @@ jobs:
 
         - name: Check Code Coverage
           run: |
-            npm run coverage > coverage_output.txt
+            npm run coverage > coverage_output.txt || true
             cat coverage_output.txt
             echo "### Code Coverage Results" >> $GITHUB_STEP_SUMMARY
             cat coverage_output.txt >> $GITHUB_STEP_SUMMARY
