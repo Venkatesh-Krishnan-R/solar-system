@@ -62,7 +62,7 @@ jobs:
            # detailed_summary: true
             
         - name: Report test results
-          uses: dorny/test-reporter@@v1.9.1
+          uses: dorny/test-reporter@v1.9.1
           with:
             name: JUnit Tests
             path: test-results.xml
