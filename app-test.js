@@ -110,7 +110,7 @@ describe('Planets API Suite', () => {
               .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.have.property('id').eql(7);
-                    res.body.should.have.property('name').eql('Uranus');
+                    res.body.should.have.property('name').eql('Uranusd');
                 done();
               });
         });
