@@ -52,6 +52,7 @@ jobs:
           with:
             paths: "test-results.xml"
             output: "README.md"
+            show: "all"
           if: always()
 
           #Only for junit reports
@@ -70,6 +71,10 @@ jobs:
             name: JUnit Tests
             path: test-results.xml
             reporter: java-junit
+            list-tests: 'all'
+            list-suites: 'all'
+            use-actions-summary: 'true'
+            badge-title: 'tests'
 
     code-coverage:
         name: Code Coverage
