@@ -76,7 +76,7 @@ jobs:
             use-actions-summary: 'true'
             badge-title: 'Junit Tests Badge'
             list-suites: 'all'
-            only-summary: 'false'
+            only-summary: 'true'
             fail-on-error: 'false'
 
     code-coverage:
