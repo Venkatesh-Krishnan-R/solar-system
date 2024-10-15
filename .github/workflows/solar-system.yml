@@ -69,14 +69,12 @@ jobs:
         - name: Report test results
           uses: dorny/test-reporter@v1.9.1
           with:
-            name: JUnit Tests
+            name: Junit Test Report
             path: test-results.xml
             reporter: java-junit
             list-tests: 'all'
-            use-actions-summary: 'true'
-            badge-title: 'Junit Tests Badge'
             list-suites: 'all'
-            only-summary: 'true'
+            badge-title: 'Junit Tests Badge'
             fail-on-error: 'false'
 
     code-coverage:
