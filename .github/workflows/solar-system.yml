@@ -49,12 +49,12 @@ jobs:
             path: test-results.xml
             if: always()
 
-   #     - name: Test Summary
-   #       uses: test-summary/action@v2.4
-   #       with:
-   #         paths: "test-results.xml"
-   #         show: "all"
-    #      if: always()
+        - name: Test Summary
+          uses: test-summary/action@v2.4
+          with:
+            paths: "test-results.xml"
+            show: "none"
+          if: always()
 
           #Only for junit reports
    #     - name: Publish Test Report
